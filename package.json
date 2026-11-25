@@ -1,0 +1,66 @@
+{
+  "name": "neuroverse",
+  "version": "0.1.0",
+  "description": "Local 3D neural-cosmos observability dashboard & universal Agent SKILL for AI Harnesses",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewzhang1996/Neuroverse.git"
+  },
+  "homepage": "https://github.com/andrewzhang1996/Neuroverse#readme",
+  "bugs": {
+    "url": "https://github.com/andrewzhang1996/Neuroverse/issues"
+  },
+  "keywords": [
+    "ai-agents",
+    "agent-skill",
+    "observability",
+    "threejs",
+    "3d-visualization",
+    "claude-code",
+    "codex",
+    "antigravity"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "references",
+    "SKILL.md",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "bin": {
+    "neuroverse": "./scripts/neuroverse.mjs",
+    "nv": "./scripts/neuroverse.mjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "start": "node scripts/neuroverse.mjs serve",
+    "serve": "node scripts/neuroverse.mjs serve",
+    "demo": "node scripts/demo-simulation.mjs",
+    "demo:stream": "node scripts/demo-simulation.mjs --stream",
+    "demo:massive": "node scripts/demo-simulation.mjs --massive",
+    "neuroverse": "node scripts/neuroverse.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.170.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

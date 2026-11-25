@@ -1,0 +1,180 @@
+:root {
+  /* Deep Space Void & Matte Obsidian Glass (2001 × Universe Sandbox) */
+  --nv-bg-void: #030508;
+  --nv-surface-glass: rgba(9, 12, 18, 0.78);
+  --nv-surface-glass-elevated: rgba(14, 19, 28, 0.88);
+  --nv-surface-subtle: rgba(255, 248, 235, 0.04);
+  --nv-surface-hover: rgba(255, 248, 235, 0.075);
+
+  /* Hairline Architectural Borders */
+  --nv-border-hairline: rgba(255, 244, 224, 0.09);
+  --nv-border-strong: rgba(255, 244, 224, 0.20);
+  --nv-border-focus: rgba(255, 194, 102, 0.55);
+
+  /* Editorial Typography Colors (Anthropic Warmth) */
+  --nv-text-primary: #f2efe9;
+  --nv-text-secondary: #9d988f;
+  --nv-text-muted: #62605b;
+  --nv-text-code: #e6dcc8;
+
+  /* Semantic Stellar Status Accents */
+  --nv-status-running: #5cb8ff;      /* Young O-star cyan-white */
+  --nv-status-tool: #ffc257;         /* Interstellar accretion gold */
+  --nv-status-waiting: #e09b46;      /* Warm amber */
+  --nv-status-completed: #6f86a3;    /* Cooled white-dwarf slate */
+  --nv-status-idle: #4c5b70;         /* Dormant brown-dwarf */
+  --nv-status-error: #ff4d3d;        /* Supernova crimson */
+
+  /* Typography Stacks */
+  --nv-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --nv-font-mono: "JetBrains Mono", "SF Mono", "Fira Code", ui-monospace, monospace;
+
+  /* Radii & Motion */
+  --nv-radius-sm: 6px;
+  --nv-radius-md: 10px;
+  --nv-radius-pill: 999px;
+  --nv-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--nv-bg-void);
+  color: var(--nv-text-primary);
+  font-family: var(--nv-font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+.nv-glass {
+  background: var(--nv-surface-glass);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  border: 1px solid var(--nv-border-hairline);
+}
+
+.nv-glass-elevated {
+  background: var(--nv-surface-glass-elevated);
+  backdrop-filter: blur(20px) saturate(1.15);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  border: 1px solid var(--nv-border-strong);
+}
+
+.nv-mono {
+  font-family: var(--nv-font-mono);
+}
+
+.nv-eyebrow {
+  font-family: var(--nv-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nv-text-secondary);
+}
+
+.nv-scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 244, 224, 0.14) transparent;
+}
+
+.nv-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.nv-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nv-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 244, 224, 0.14);
+  border-radius: 999px;
+}
+
+.nv-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 244, 224, 0.25);
+}
+
+.nv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  border-radius: var(--nv-radius-sm);
+  border: 1px solid var(--nv-border-hairline);
+  background: var(--nv-surface-subtle);
+  color: var(--nv-text-primary);
+  font-family: var(--nv-font-sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 140ms var(--nv-ease-out),
+    border-color 140ms var(--nv-ease-out),
+    color 140ms var(--nv-ease-out);
+}
+
+.nv-btn:hover:not(:disabled) {
+  background: var(--nv-surface-hover);
+  border-color: var(--nv-border-strong);
+}
+
+.nv-btn:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+.nv-btn-active {
+  background: rgba(255, 244, 224, 0.11);
+  border-color: var(--nv-border-strong);
+  color: var(--nv-text-primary);
+}
+
+.nv-btn-primary {
+  background: rgba(255, 194, 87, 0.14);
+  border-color: rgba(255, 194, 87, 0.42);
+  color: #ffe3ab;
+}
+
+.nv-btn-primary:hover:not(:disabled) {
+  background: rgba(255, 194, 87, 0.22);
+  border-color: rgba(255, 194, 87, 0.68);
+}
+
+@keyframes nv-reticle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nv-pulse-opacity {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,38 @@
+name: Bug Report
+description: Report a bug in Neuroverse
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for taking the time to report a bug!
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what happened.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands, agent harness, or UI steps to reproduce the issue.
+      placeholder: |
+        1. Run `npm start`
+        2. Run `node scripts/neuroverse.mjs ...`
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Node.js version, browser, and Agent Harness (e.g., Claude Code, Codex, Antigravity).
+      placeholder: |
+        - OS: Linux / macOS / Windows
+        - Node.js: v20.x
+        - Browser: Chrome
+        - Harness: Claude Code
+    validations:
+      required: true

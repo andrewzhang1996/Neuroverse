@@ -1,0 +1,19 @@
+name: Feature Request
+description: Suggest an improvement or new capability for Neuroverse
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem or use case does this solve?
+      description: Describe the workflow, visualization, or Agent SKILL capability you'd like.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How should it work from the user or agent perspective?
+    validations:
+      required: false

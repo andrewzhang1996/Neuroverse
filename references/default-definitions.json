@@ -1,0 +1,383 @@
+{
+  "schemaVersion": "neuroverse.definitions/v6",
+  "nodeDefinitions": [
+    {
+      "type": "harness",
+      "label": "Agent Harness",
+      "typeLabel": "CORE HUB · HARNESS",
+      "description": "Local AI agent host environment anchoring its conversation sessions.",
+      "orbitTier": 0,
+      "defaultConfig": {
+        "vendor": null,
+        "surface": "CLI",
+        "workspace": null,
+        "version": null,
+        "startedAt": null
+      },
+      "fields": [
+        { "key": "vendor", "label": "Provider / Ecosystem", "kind": "text" },
+        { "key": "surface", "label": "Interface Surface", "kind": "badge" },
+        { "key": "workspace", "label": "Primary Workspace", "kind": "code" },
+        { "key": "version", "label": "Runtime Version", "kind": "text" },
+        { "key": "startedAt", "label": "Online Since", "kind": "timestamp" }
+      ],
+      "appearance": {
+        "default": {
+          "coreColor": "#e6f0ff",
+          "haloColor": "#5b8fd9",
+          "emissiveIntensity": 0.72,
+          "scale": 1.18,
+          "pulseSpeed": 0.3,
+          "pulseAmplitude": 0.03,
+          "orbitRingOpacity": 0.14,
+          "turbulence": 0.0
+        },
+        "running": {
+          "coreColor": "#fff3dc",
+          "haloColor": "#e09a42",
+          "emissiveIntensity": 0.98,
+          "scale": 1.28,
+          "pulseSpeed": 0.75,
+          "pulseAmplitude": 0.06,
+          "orbitRingOpacity": 0.2,
+          "turbulence": 0.0
+        },
+        "tool_calling": {
+          "coreColor": "#fff8e8",
+          "haloColor": "#f0af4d",
+          "emissiveIntensity": 1.14,
+          "scale": 1.32,
+          "pulseSpeed": 1.25,
+          "pulseAmplitude": 0.08,
+          "orbitRingOpacity": 0.24,
+          "turbulence": 0.0
+        },
+        "waiting": {
+          "coreColor": "#edd8b4",
+          "haloColor": "#b88344",
+          "emissiveIntensity": 0.72,
+          "scale": 1.2,
+          "pulseSpeed": 0.4,
+          "pulseAmplitude": 0.04,
+          "orbitRingOpacity": 0.16,
+          "turbulence": 0.0
+        },
+        "completed": {
+          "coreColor": "#a8bed9",
+          "haloColor": "#4f7096",
+          "emissiveIntensity": 0.52,
+          "scale": 1.08,
+          "pulseSpeed": 0.0,
+          "pulseAmplitude": 0.0,
+          "orbitRingOpacity": 0.1,
+          "turbulence": 0.0
+        },
+        "idle": {
+          "coreColor": "#93aac7",
+          "haloColor": "#436082",
+          "emissiveIntensity": 0.46,
+          "scale": 1.05,
+          "pulseSpeed": 0.0,
+          "pulseAmplitude": 0.0,
+          "orbitRingOpacity": 0.08,
+          "turbulence": 0.0
+        },
+        "error": {
+          "coreColor": "#ffd1cc",
+          "haloColor": "#de473c",
+          "emissiveIntensity": 1.05,
+          "scale": 1.25,
+          "pulseSpeed": 1.1,
+          "pulseAmplitude": 0.08,
+          "orbitRingOpacity": 0.2,
+          "turbulence": 0.0
+        }
+      }
+    },
+    {
+      "type": "session",
+      "label": "Conversation Session",
+      "typeLabel": "PRIMARY NODE · SESSION",
+      "description": "Primary neural node representing an active or historical conversation session.",
+      "orbitTier": 1,
+      "defaultConfig": {
+        "model": null,
+        "workspace": null,
+        "task": null,
+        "progress": null,
+        "activeTool": null,
+        "toolsUsed": [],
+        "startedAt": null,
+        "endedAt": null,
+        "resultSummary": null
+      },
+      "fields": [
+        { "key": "model", "label": "Model", "kind": "badge" },
+        { "key": "task", "label": "Current Objective", "kind": "multiline" },
+        { "key": "progress", "label": "Live Progress", "kind": "text" },
+        { "key": "activeTool", "label": "Active Tool", "kind": "badge" },
+        { "key": "workspace", "label": "Workspace", "kind": "code" },
+        { "key": "startedAt", "label": "Started At", "kind": "timestamp" },
+        { "key": "endedAt", "label": "Ended At", "kind": "timestamp" },
+        { "key": "toolsUsed", "label": "Tool Trail", "kind": "tags" },
+        { "key": "resultSummary", "label": "Execution Result", "kind": "multiline" }
+      ],
+      "appearance": {
+        "default": {
+          "coreColor": "#cde3ff",
+          "haloColor": "#4e86cc",
+          "emissiveIntensity": 0.62,
+          "scale": 0.72,
+          "pulseSpeed": 0.35,
+          "pulseAmplitude": 0.03,
+          "orbitRingOpacity": 0.12,
+          "turbulence": 0.0
+        },
+        "running": {
+          "coreColor": "#e8f7ff",
+          "haloColor": "#4db4f5",
+          "emissiveIntensity": 0.96,
+          "scale": 0.82,
+          "pulseSpeed": 0.95,
+          "pulseAmplitude": 0.06,
+          "orbitRingOpacity": 0.2,
+          "turbulence": 0.0
+        },
+        "tool_calling": {
+          "coreColor": "#fff5dc",
+          "haloColor": "#ebaa44",
+          "emissiveIntensity": 1.15,
+          "scale": 0.86,
+          "pulseSpeed": 1.5,
+          "pulseAmplitude": 0.08,
+          "orbitRingOpacity": 0.24,
+          "turbulence": 0.0
+        },
+        "waiting": {
+          "coreColor": "#edd6ad",
+          "haloColor": "#bf8640",
+          "emissiveIntensity": 0.68,
+          "scale": 0.74,
+          "pulseSpeed": 0.45,
+          "pulseAmplitude": 0.04,
+          "orbitRingOpacity": 0.14,
+          "turbulence": 0.0
+        },
+        "completed": {
+          "coreColor": "#9ab3d1",
+          "haloColor": "#476991",
+          "emissiveIntensity": 0.46,
+          "scale": 0.62,
+          "pulseSpeed": 0.0,
+          "pulseAmplitude": 0.0,
+          "orbitRingOpacity": 0.08,
+          "turbulence": 0.0
+        },
+        "idle": {
+          "coreColor": "#88a0bd",
+          "haloColor": "#3d5b80",
+          "emissiveIntensity": 0.4,
+          "scale": 0.58,
+          "pulseSpeed": 0.0,
+          "pulseAmplitude": 0.0,
+          "orbitRingOpacity": 0.07,
+          "turbulence": 0.0
+        },
+        "error": {
+          "coreColor": "#ffd1cc",
+          "haloColor": "#de4338",
+          "emissiveIntensity": 1.04,
+          "scale": 0.8,
+          "pulseSpeed": 1.2,
+          "pulseAmplitude": 0.08,
+          "orbitRingOpacity": 0.18,
+          "turbulence": 0.0
+        }
+      }
+    },
+    {
+      "type": "subagent",
+      "label": "Subagent Worker",
+      "typeLabel": "SUBAGENT NODE · WORKER",
+      "description": "Transient child node executing specialized tasks; dissolves with a soft farewell afterglow once inactive past its TTL.",
+      "orbitTier": 2,
+      "ttlSeconds": 30,
+      "defaultConfig": {
+        "role": null,
+        "model": null,
+        "task": null,
+        "progress": null,
+        "activeTool": null,
+        "toolsUsed": [],
+        "startedAt": null,
+        "endedAt": null,
+        "ttlSeconds": 30,
+        "resultSummary": null
+      },
+      "fields": [
+        { "key": "role", "label": "Specialist Role", "kind": "badge" },
+        { "key": "model", "label": "Model", "kind": "badge" },
+        { "key": "task", "label": "Assigned Task", "kind": "multiline" },
+        { "key": "progress", "label": "Current Step", "kind": "text" },
+        { "key": "activeTool", "label": "Active Tool", "kind": "badge" },
+        { "key": "startedAt", "label": "Spawned At", "kind": "timestamp" },
+        { "key": "endedAt", "label": "Finished At", "kind": "timestamp" },
+        { "key": "ttlSeconds", "label": "Inactive TTL (s)", "kind": "badge" },
+        { "key": "toolsUsed", "label": "Tool Trail", "kind": "tags" },
+        { "key": "resultSummary", "label": "Subagent Output", "kind": "multiline" }
+      ],
+      "appearance": {
+        "default": {
+          "coreColor": "#c4f2e8",
+          "haloColor": "#3ea390",
+          "emissiveIntensity": 0.58,
+          "scale": 0.46,
+          "pulseSpeed": 0.4,
+          "pulseAmplitude": 0.03,
+          "orbitRingOpacity": 0.1,
+          "turbulence": 0.0
+        },
+        "running": {
+          "coreColor": "#e3fff8",
+          "haloColor": "#3cd1b8",
+          "emissiveIntensity": 0.94,
+          "scale": 0.54,
+          "pulseSpeed": 1.1,
+          "pulseAmplitude": 0.06,
+          "orbitRingOpacity": 0.18,
+          "turbulence": 0.0
+        },
+        "tool_calling": {
+          "coreColor": "#fff4d6",
+          "haloColor": "#e8ae4a",
+          "emissiveIntensity": 1.14,
+          "scale": 0.58,
+          "pulseSpeed": 1.65,
+          "pulseAmplitude": 0.08,
+          "orbitRingOpacity": 0.22,
+          "turbulence": 0.0
+        },
+        "waiting": {
+          "coreColor": "#ebd4ad",
+          "haloColor": "#b8843e",
+          "emissiveIntensity": 0.64,
+          "scale": 0.48,
+          "pulseSpeed": 0.5,
+          "pulseAmplitude": 0.04,
+          "orbitRingOpacity": 0.12,
+          "turbulence": 0.0
+        },
+        "completed": {
+          "coreColor": "#8faab8",
+          "haloColor": "#41687d",
+          "emissiveIntensity": 0.42,
+          "scale": 0.4,
+          "pulseSpeed": 0.0,
+          "pulseAmplitude": 0.0,
+          "orbitRingOpacity": 0.07,
+          "turbulence": 0.0
+        },
+        "idle": {
+          "coreColor": "#7f99a8",
+          "haloColor": "#395a6e",
+          "emissiveIntensity": 0.38,
+          "scale": 0.38,
+          "pulseSpeed": 0.0,
+          "pulseAmplitude": 0.0,
+          "orbitRingOpacity": 0.06,
+          "turbulence": 0.0
+        },
+        "error": {
+          "coreColor": "#ffd1cc",
+          "haloColor": "#de4338",
+          "emissiveIntensity": 1.04,
+          "scale": 0.52,
+          "pulseSpeed": 1.3,
+          "pulseAmplitude": 0.08,
+          "orbitRingOpacity": 0.18,
+          "turbulence": 0.0
+        }
+      }
+    }
+  ],
+  "edgeDefinitions": [
+    {
+      "type": "hierarchy",
+      "typeLabel": "NEURAL LINK · HIERARCHY",
+      "description": "Clean optical neural link connecting Harness → Session → Subagent.",
+      "appearance": {
+        "default": {
+          "color": "#6088b5",
+          "opacity": 0.44,
+          "curveArc": 0.1,
+          "pulseCount": 0,
+          "pulseSpeed": 0.0,
+          "pulseColor": "#94c6ff"
+        },
+        "active": {
+          "color": "#64b8f7",
+          "opacity": 0.62,
+          "curveArc": 0.12,
+          "pulseCount": 2,
+          "pulseSpeed": 0.38,
+          "pulseColor": "#ffe09c"
+        },
+        "completed": {
+          "color": "#5479a3",
+          "opacity": 0.36,
+          "curveArc": 0.1,
+          "pulseCount": 0,
+          "pulseSpeed": 0.0,
+          "pulseColor": "#7da2cc"
+        },
+        "error": {
+          "color": "#c4473d",
+          "opacity": 0.56,
+          "curveArc": 0.12,
+          "pulseCount": 2,
+          "pulseSpeed": 0.52,
+          "pulseColor": "#ff857a"
+        }
+      }
+    },
+    {
+      "type": "collaborates",
+      "typeLabel": "SYNAPTIC BRIDGE · COLLABORATION",
+      "description": "Long-range neural bridge transmitting cross-agent context or shared results.",
+      "appearance": {
+        "default": {
+          "color": "#6b8fb3",
+          "opacity": 0.42,
+          "curveArc": 0.22,
+          "pulseCount": 1,
+          "pulseSpeed": 0.16,
+          "pulseColor": "#94ebda"
+        },
+        "active": {
+          "color": "#dba14b",
+          "opacity": 0.64,
+          "curveArc": 0.25,
+          "pulseCount": 2,
+          "pulseSpeed": 0.46,
+          "pulseColor": "#fff0c9"
+        },
+        "completed": {
+          "color": "#58799c",
+          "opacity": 0.34,
+          "curveArc": 0.22,
+          "pulseCount": 0,
+          "pulseSpeed": 0.0,
+          "pulseColor": "#86a2bf"
+        },
+        "error": {
+          "color": "#c4473d",
+          "opacity": 0.56,
+          "curveArc": 0.24,
+          "pulseCount": 2,
+          "pulseSpeed": 0.58,
+          "pulseColor": "#ff857a"
+        }
+      }
+    }
+  ]
+}
